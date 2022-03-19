@@ -1,0 +1,368 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --blue: #31326f;
+  --light-blue: #258aff;
+  --color-primary: #9d0191;
+  --color-sec: #db6400;
+  --color-grey: #e3eef8;
+  --light-grey: #ccc;
+  --dark-grey: #222831;
+  --pink: #e9204f;
+}
+
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+html{
+  font-size: 10px;
+}
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+p{
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+img{
+  width: 100%;
+}
+
+section{
+  width:100%;
+  padding: 8rem 0;
+}
+.container{
+  width:100%;
+  max-width: 110rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* HEADER SECTION*/
+header{
+  width: 100%;
+  background-color: black;
+  padding: 5px 0;
+}
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding:0 1.5rem;
+}
+nav .logo{
+  width: 5%;
+}
+nav h1{
+  color: white;
+}
+
+.nav-ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-ul li a{
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1rem 0;
+  margin-left: 3rem;
+  color: white;
+}
+
+.nav-link,
+.current{
+  position: relative;
+}
+
+.nav-link::before,
+.current::before{
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: -3px;
+  width: 50%;
+  height: 4px;
+  border-radius: 5px;
+  background-color: var(--pink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 0.6s;
+}
+
+.current::before{
+  transform: scaleX(1);
+}
+
+.nav-link:hover::before{
+  transform: scaleX(1);
+}
+/*Navigation bar icon elements*/
+
+.hamburger,.close,.search{
+  font-size: 2.5rem;
+  cursor:pointer;
+  color: white;
+}
+.hamburger{
+  display: none;
+}
+.search{
+  font-size: 1.8rem;
+}
+.close{
+  position: absolute;
+  top: 0;
+  right:0;
+  padding: 1.5rem 3rem 0 0;
+  display: none !important;
+}
+
+/*INTRO SECTION*/
+
+#intro{
+  width: 100%;
+  padding: 0;
+  color: white;
+  background-color: black;
+}
+
+#intro .container{
+  background-image: url("../img/hero_02.jpg");
+  background-repeat: no-repeat;
+  background-position-x: 70%;
+}
+
+.line{
+  position: relative;
+  padding-top: 3rem;
+}
+.line::before{
+  content: "";
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  width: 5rem;
+  height: 3px;
+  background-color: var(--pink) !important;
+}
+.intro-text{
+  width: 80%;
+  padding: 8rem 0;
+}
+.intro-text h1{
+  font-size: 8rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1.5rem 3rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  border: 2px solid var(--pink);
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  text-decoration: none;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 3px;
+
+}
+.btn::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 99%;
+  height: 100%;
+  background-color: var(--pink);
+  transform: translateX(-100%);
+  transition: all 0.3s;
+  z-index: -1;
+  border-radius: 3px;
+}
+
+.btn:hover::before{
+  transform: translateX(0%);
+}
+.intro-cards{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-right: 5rem;
+  z-index: 1;
+}
+.cards{
+  background-color: var(--dark-grey);
+  padding: 3rem 1.5rem;
+  margin-right: 5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 6rem;
+}
+.cards:hover{
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 20px;
+  border:1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition-timing-function: ease-out;
+  transition: all 1s;
+}
+.cards i{
+  font-size: 4rem;
+  color: var(--pink);
+  padding-bottom: 2rem;
+}
+.heading-3{
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+.cards h3{
+  padding-bottom: 3rem;
+}
+.cards .line::before{
+  top:7rem;
+}
+/*//board around the card in the tiltle section */
+.heading > *{
+ /* This means target all the elements inside the div with class heading */
+  padding-bottom: 2rem;
+}
+
+.heading h2{
+  font-size: 5rem;
+  font-weight: 700;
+  margin-top: 4rem;
+}
+.heading p{
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--pink);
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  row-gap: 4rem;
+  column-gap: 2rem;
+  margin-top: 2rem;
+}
+.service {
+  /* width: 80%; */
+  background-color: #eee;
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.6rem;
+  transition: all 0.3s;
+}
+.service i:first-child{
+  color: var(--pink);
+  font-size: 2rem;
+}
+
+.service:hover{
+  background-color: var(--pink);
+  color: var(--white);
+  cursor:pointer;
+}
+
+.service:hover i:first-child{
+  color: var(--white);
+  font-size: 2rem;
+}
+.h-line{
+  position:relative;
+}
+.h-line::before{
+  content: "";
+  position: absolute;
+  top:0;
+  left: 50%;
+  width: 4px;
+  height: 5rem;
+  background-color: var(--pink);
+}
+
+/*parallax effect*/
+
+  /*-webkit-filter: grayscale(100%);
+  filter: grayscale(100%);*/
+
+.imgContainer img{
+  width:100%;
+}
+
+#parallax{
+  width: 100%;
+  background-color: var(--black);
+  position: relative;
+}
+.parallax-container{
+  padding:3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.parallax-container >*{
+  margin: 2rem;
+}
+.content{
+  color: white;
+}
+.text{
+  font-size: 1.8rem;
+  line-height: 2.5;
+}
+.title{
+  font-weight: 700;
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+}
+.underline{
+  position: absolute;
+  width: 50%;
+  height: 3px;
+  background-color: white;
+  bottom: 0;
+  left: 0;
+}
+/*The shadow effect*/
+.shadow{
+  position: absolute;
+  bottom: 100%;
+  height: 300px;
+  width:100%;
+  left:0;
+  z-index: 20;
+  background: linear-gradient(to top, #151515, transparent);
+
+}
+

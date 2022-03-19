@@ -1,0 +1,44 @@
+/*media queries*/
+ @media screen and (max-width: 600px){
+   nav{
+     display: block;
+   }
+    .nav-ul{
+      width: 100%;
+      flex-direction: column;
+      margin-top: 1rem;
+      display: none !important;
+    }
+   .nav-ul li{
+     width: 100%;
+     text-align: center;
+     border-top: 1px solid rgba(255,255,255,0.4);
+   }
+   .nav-ul li:last-child{
+     border-bottom: 1px solid rgba(255,255,255,0.4);
+   }
+
+   .nav-link::before,.current::before{
+     display: none;
+   }
+   .search{
+     display: none !important;
+
+   }
+   .hamburger{
+     display: block !important;
+   }
+   .nav-ul .close{
+     display: block;
+   }
+   .close{
+     display: block !important;
+   }
+   /*javascript classes we'll use*/
+   .show{
+     display: flex !important;
+   }
+   .hide{
+     display: none !important;
+   }
+ }
